@@ -1,0 +1,94 @@
+.container {
+  min-height: 100vh;
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dFlex {
+  display: flex;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.justifyContentSpaceBetween {
+  justify-content: space-between;
+}
+
+.justifyContentCenter {
+  justify-content: center;
+}
+
+.logoFamily {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+}
+
+.fw700 {
+  font-weight: 700;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.fw400 {
+  font-weight: 400;
+}
+
+.fs32 {
+  font-size: 32px;
+}
+
+.fs24 {
+  font-size: 24px;
+}
+
+.fs18 {
+  font-size: 18.66px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.clBrown {
+  color: #4d2600;
+}
+
+.clOrange {
+  color: #f48c12;
+}
+
+.clGreen {
+  color: #00a650;
+}
+
+.clGreyLight {
+  color: #818181 !important;
+}
+
+.clGrey {
+  color: #666666 !important;
+}
+
+.clGreyDark {
+  color: #222222 !important;
+}
+
+.bgWhite {
+  background-color: #ffffff;
+}
