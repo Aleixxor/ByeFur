@@ -238,12 +238,14 @@ export default function Document() {
           </div>
 
           <div>
-            <div
+            <Link
+              href={"https://www.google.com/"}
               className={`${styles.bgOrange} ${styles.dFlex} ${styles.alignItemsCenter} ${styles.justifyContentCenter}`}
               style={{
                 borderRadius: "8px",
                 padding: "12px 16px",
                 height: "48px",
+                textDecoration: "none",
               }}
             >
               <span
@@ -251,7 +253,7 @@ export default function Document() {
               >
                 Compre agora
               </span>
-            </div>
+            </Link>
           </div>
         </div>
         <div style={{ display: "flex" }}>
