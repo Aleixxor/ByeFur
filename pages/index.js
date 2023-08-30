@@ -1,30 +1,15 @@
-import Head from "next/head";
 import styles from "../styles/ByeFur.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Copyright, List, StarFour } from "@phosphor-icons/react";
+import { Copyright, Leaf, List, Star, StarFour } from "@phosphor-icons/react";
 import { relative } from "path";
+import Head from "next/head";
 
-export default function Home() {
+export default function Document() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet"
-        ></link>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css"
-        ></link>
+        <title>ByeFur</title>
       </Head>
       <header style={{ width: "100%", padding: "16px" }}>
         <div className={`${styles.dFlex} ${styles.justifyContentSpaceBetween}`}>
@@ -39,7 +24,7 @@ export default function Home() {
             </div>
             <div>
               <div
-                className={`${styles.logoFamily} ${styles.fw500} ${styles.fs16} grid`}
+                className={`${styles.logoFamily} ${styles.fw600} ${styles.fs16} grid`}
               >
                 <div style={{ paddingRight: "2px" }}>
                   <span className={styles.clBrown}>Bye</span>
@@ -122,16 +107,14 @@ export default function Home() {
             </span>
           </div>
         </div>
-        {/* 
-        <span>
-          <Link href="/posts/first-post">Other page link</Link>
-        </span> */}
       </main>
 
       <main style={{ gap: "32px" }}>
-        <div style={{ gap: "8px" }}>
+        <div
+          className={`${styles.dFlex} ${styles.flexColumn}`}
+          style={{ gap: "16px" }}
+        >
           <div
-            style={{ marginBottom: "8px" }}
             className={`${styles.logoFamily} ${styles.fw700} ${styles.fs24}`}
           >
             <span className={styles.clBrown}>Diga adeus aos pelos</span>
@@ -151,25 +134,124 @@ export default function Home() {
               Elefante Obeso Listrado ByeFur
             </span>
           </div>
+          <div className={`${styles.dFlex}`} style={{ gap: "8px" }}>
+            <div
+              className={`${styles.clOrange} ${styles.bgOrange20}`}
+              style={{
+                padding: "0px 12px 0px 0px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "10.5px",
+                fontWeight: "500",
+                width: "fit-content",
+                gap: "4px",
+                borderRadius: "12px",
+              }}
+            >
+              <Image
+                src="/images/trophy-medal.svg" // Route of the image file
+                width={24}
+                height={24}
+                alt="Your Name"
+              />
+              <span>Premiado</span>
+            </div>
+
+            <div
+              className={`${styles.clGreen} ${styles.bgGreen}`}
+              style={{
+                padding: "0px 12px 0px 8px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "10.5px",
+                fontWeight: "500",
+                width: "fit-content",
+                gap: "4px",
+                borderRadius: "12px",
+              }}
+            >
+              <Leaf className={`${styles.clGreen}`} size={16}></Leaf>
+              <span>Sustentável</span>
+            </div>
+          </div>
           <div
-            className={styles.clOrange}
-            style={{
-              padding: "10px 12px 10px 0px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "10.5px",
-              fontWeight: "500",
-              backgroundColor: "rgba(244, 140, 18, 0.20)",
-            }}
+            className={`${styles.dFlex} ${styles.justifyContentSpaceBetween}`}
           >
-            <Image
-              src="/images/trophy-medal.svg" // Route of the image file
-              width={24}
-              height={24}
-              alt="Your Name"
-            />
-            Premiado
+            <div
+              className={`${styles.dFlex} ${styles.alignItemsCenter}`}
+              style={{ gap: "8px" }}
+            >
+              <div className={`${styles.dFlex}`} style={{ gap: "2px" }}>
+                <Star
+                  size={20}
+                  weight="fill"
+                  className={`${styles.clOrange}`}
+                ></Star>
+                <Star
+                  size={20}
+                  weight="fill"
+                  className={`${styles.clOrange}`}
+                ></Star>
+                <Star
+                  size={20}
+                  weight="fill"
+                  className={`${styles.clOrange}`}
+                ></Star>
+                <Star
+                  size={20}
+                  weight="fill"
+                  className={`${styles.clOrange}`}
+                ></Star>
+                <Star
+                  size={20}
+                  weight="fill"
+                  className={`${styles.clOrange}`}
+                ></Star>
+              </div>
+              <div>
+                <span
+                  className={`${styles.fs14} ${styles.fw600} ${styles.clGreyDark}`}
+                >
+                  5.0&nbsp;
+                </span>
+                <span
+                  className={`${styles.fs14} ${styles.fw400} ${styles.clGreyLight}`}
+                >
+                  (32)
+                </span>
+              </div>
+            </div>
+            <div>
+              <span
+                className={`${styles.fs14} ${styles.fw500} ${styles.clGreyLight}`}
+              >
+                +3k&nbsp;
+              </span>
+              <span
+                className={`${styles.fs14} ${styles.fw400} ${styles.clGreyLight}`}
+              >
+                vendidos
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <div
+              className={`${styles.bgOrange} ${styles.dFlex} ${styles.alignItemsCenter} ${styles.justifyContentCenter}`}
+              style={{
+                borderRadius: "8px",
+                padding: "12px 16px",
+                height: "48px",
+              }}
+            >
+              <span
+                className={`${styles.clWhite} ${styles.fw600} ${styles.fs14}`}
+              >
+                Compre agora
+              </span>
+            </div>
           </div>
         </div>
         <div style={{ display: "flex" }}>
