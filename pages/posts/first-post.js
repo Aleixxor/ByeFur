@@ -23,9 +23,9 @@ export default function FirstPost() {
       </h2>
 
       <Image
-        src="/images/profile.jpg" // Route of the image file
-        height={144} // Desired size with correct aspect ratio
-        width={144} // Desired size with correct aspect ratio
+        src="/images/profile.jpg"
+        height={144}
+        width={144}
         alt="Your Name"
       />
     </Layout>

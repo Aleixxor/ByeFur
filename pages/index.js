@@ -1,9 +1,11 @@
 import styles from "../styles/ByeFur.module.css";
-import Link from "next/link";
 import Image from "next/image";
 import { Copyright, Leaf, List, Star, StarFour } from "@phosphor-icons/react";
 import { relative } from "path";
 import Head from "next/head";
+import LinkButton from "../components/link-button";
+import Button from "../components/button";
+import Logo from "../components/logo";
 
 export default function Document() {
   return (
@@ -11,33 +13,16 @@ export default function Document() {
       <Head>
         <title>ByeFur</title>
       </Head>
-      <header style={{ width: "100%", padding: "16px" }}>
-        <div className={`${styles.dFlex} ${styles.justifyContentSpaceBetween}`}>
-          <div className={styles.dFlex} style={{ gap: "16px" }}>
-            <div>
-              <Image
-                src="/images/logo.svg" // Route of the image file
-                height={24} // Desired size with correct aspect ratio
-                width={24} // Desired size with correct aspect ratio
-                alt="Your Name"
-              />
-            </div>
-            <div>
-              <div
-                className={`${styles.logoFamily} ${styles.fw600} ${styles.fs16} grid`}
-              >
-                <div style={{ paddingRight: "2px" }}>
-                  <span className={styles.clBrown}>Bye</span>
-                  <span className={styles.clOrange}>Fur</span>
-                </div>
-                <Image
-                  src="/images/star.svg" // Route of the image file
-                  height={8} // Desired size with correct aspect ratio
-                  width={8} // Desired size with correct aspect ratio
-                  alt="Your Name"
-                />
-              </div>
-            </div>
+      <header className={`${styles.w100} ${styles.p16} mb-3`}>
+        <div className={`d-flex justify-content-between`}>
+          <div className={`d-flex ${styles.gap16}`}>
+            <Image
+              src="/images/logo.svg"
+              height={24}
+              width={24}
+              alt="Logomarca"
+            />
+            <Logo size={16} className={`${styles.fw600}`}></Logo>
           </div>
           <div>
             <List size={24} className={styles.clOrange}></List>
@@ -45,265 +30,273 @@ export default function Document() {
         </div>
       </header>
 
-      <main style={{ gap: "32px" }}>
-        <div>
-          <div
-            style={{ marginBottom: "8px" }}
-            className={`${styles.logoFamily} ${styles.fw700} ${styles.fs32} ${styles.dFlex}`}
-          >
-            <div style={{ marginRight: "4px" }}>
-              <span className={styles.clBrown}>Bye</span>
-              <span className={styles.clOrange}>Fur</span>
+      <main className="d-flex justify-content-center align-items-center mb-5">
+        <div className={`row d-flex align-items-center justify-content-center`}>
+          <div className={`col-sm-6 col-xs-12`}>
+            <div
+              className={`d-flex align-items-center justify-content-center justify-content-sm-start mb-2`}
+            >
+              <Logo size={32}></Logo>
             </div>
-            <Image
-              src="/images/star.svg" // Route of the image file
-              height={16} // Desired size with correct aspect ratio
-              width={16} // Desired size with correct aspect ratio
+            <div>
+              <span
+                className={`${styles.clBrown} ${styles.fw500} ${styles.fs14}`}
+              >
+                Desenvolvidos com paixão e cuidado, feitos para proporcionar o
+                máximo de conforto e bem-estar aos seus companheiros peludos
+              </span>
+            </div>
+          </div>
+          <div
+            className={`col-sm-6 col-xs-12 d-flex align-items-center justify-content-center`}
+          >
+            <img
+              src="/images/pets-1.svg"
+              style={{ width: "100%", maxWidth: "436px" }}
               alt="Your Name"
             />
           </div>
-          <div>
-            <span
-              className={`${styles.clBrown} ${styles.fw500} ${styles.fs14}`}
-            >
-              Desenvolvidos com paixão e cuidado, feitos para proporcionar o
-              máximo de conforto e bem-estar aos seus companheiros peludos
-            </span>
-          </div>
-        </div>
-        <div>
-          <Image
-            src="/images/pets-1.svg" // Route of the image file
-            width={408}
-            height={348}
-            alt="Your Name"
-          />
         </div>
       </main>
 
-      <main style={{ gap: "32px" }}>
-        <div>
-          <Image
-            src="/images/pets-2.svg" // Route of the image file
-            width={259}
-            height={269}
-            alt="Your Name"
-          />
-        </div>
-        <div>
-          <div
-            style={{ marginBottom: "8px" }}
-            className={`${styles.logoFamily} ${styles.fw700} ${styles.fs24}`}
-          >
-            <span className={styles.clBrown}>Todo cuidado é pouco</span>
-          </div>
-          <div>
-            <span
-              className={`${styles.clBrown} ${styles.fw500} ${styles.fs14}`}
+      <main className="d-flex justify-content-center align-items-center mb-5">
+        <div className={`row d-flex align-items-center justify-content-center`}>
+          <div className={`col-sm-6 col-xs-12 order-sm-last `}>
+            <div
+              className={`${styles.logoFamily} ${styles.fw700} ${styles.fs24} mb-2`}
             >
-              A gente sabe melhor que ninguém que cuidar dos bichinhos dá uma
-              trabalheira, e manter a casa limpa é um desafio diário. Por isso,
-              queremos o bem-estar não só dos bichanos mas o seu também.
-            </span>
+              <span className={styles.clBrown}>Todo cuidado é pouco</span>
+            </div>
+            <div>
+              <span
+                className={`${styles.clBrown} ${styles.fw500} ${styles.fs14}`}
+              >
+                A gente sabe melhor que ninguém que cuidar dos bichinhos dá uma
+                trabalheira, e manter a casa limpa é um desafio diário. Por
+                isso, queremos o bem-estar não só dos bichanos mas o seu também.
+              </span>
+            </div>
+          </div>
+          <div
+            className={`col-sm-6 col-xs-12 d-flex align-items-center justify-content-center`}
+          >
+            <img
+              src="/images/pets-2.svg"
+              style={{
+                width: "100%",
+                maxWidth: "335px",
+              }}
+            />
           </div>
         </div>
       </main>
 
-      <main style={{ gap: "32px" }}>
-        <div
-          className={`${styles.dFlex} ${styles.flexColumn}`}
-          style={{ gap: "16px" }}
-        >
-          <div
-            className={`${styles.logoFamily} ${styles.fw700} ${styles.fs24}`}
-          >
-            <span className={styles.clBrown}>Diga adeus aos pelos</span>
-          </div>
-          <div>
-            <span
-              className={`${styles.clBrown} ${styles.fw500} ${styles.fs14}`}
-            >
-              Deixe seu pet confortável. Facilite a limpeza da casa e saia com
-              suas melhores roupas sem se preocupar com os pelos!
-            </span>
-          </div>
-          <div>
-            <span
-              className={`${styles.clGreyDark} ${styles.fw600} ${styles.fs18}`}
-            >
-              Elefante Obeso Listrado ByeFur
-            </span>
-          </div>
-          <div className={`${styles.dFlex}`} style={{ gap: "8px" }}>
-            <div
-              className={`${styles.clOrange} ${styles.bgOrange20}`}
-              style={{
-                padding: "0px 12px 0px 0px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "10.5px",
-                fontWeight: "500",
-                width: "fit-content",
-                gap: "4px",
-                borderRadius: "12px",
-              }}
-            >
-              <Image
-                src="/images/trophy-medal.svg" // Route of the image file
-                width={24}
-                height={24}
-                alt="Your Name"
-              />
-              <span>Premiado</span>
-            </div>
-
-            <div
-              className={`${styles.clGreen} ${styles.bgGreen}`}
-              style={{
-                padding: "0px 12px 0px 8px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "10.5px",
-                fontWeight: "500",
-                width: "fit-content",
-                gap: "4px",
-                borderRadius: "12px",
-              }}
-            >
-              <Leaf className={`${styles.clGreen}`} size={16}></Leaf>
-              <span>Sustentável</span>
-            </div>
-          </div>
-          <div
-            className={`${styles.dFlex} ${styles.justifyContentSpaceBetween}`}
-          >
-            <div
-              className={`${styles.dFlex} ${styles.alignItemsCenter}`}
-              style={{ gap: "8px" }}
-            >
-              <div className={`${styles.dFlex}`} style={{ gap: "2px" }}>
-                <Star
-                  size={20}
-                  weight="fill"
-                  className={`${styles.clOrange}`}
-                ></Star>
-                <Star
-                  size={20}
-                  weight="fill"
-                  className={`${styles.clOrange}`}
-                ></Star>
-                <Star
-                  size={20}
-                  weight="fill"
-                  className={`${styles.clOrange}`}
-                ></Star>
-                <Star
-                  size={20}
-                  weight="fill"
-                  className={`${styles.clOrange}`}
-                ></Star>
-                <Star
-                  size={20}
-                  weight="fill"
-                  className={`${styles.clOrange}`}
-                ></Star>
+      <main className="d-flex justify-content-center align-items-center mb-5">
+        <div className={`row d-flex align-items-center justify-content-center`}>
+          <div className={`col-12 d-sm-none d-block mb-3`}>
+            <div>
+              <div
+                className={`${styles.logoFamily} ${styles.fw700} ${styles.fs24} mb-2`}
+              >
+                <span className={styles.clBrown}>Diga adeus aos pelos</span>
               </div>
               <div>
                 <span
-                  className={`${styles.fs14} ${styles.fw600} ${styles.clGreyDark}`}
+                  className={`${styles.clBrown} ${styles.fw500} ${styles.fs14}`}
                 >
-                  5.0&nbsp;
+                  Deixe seu pet confortável. Facilite a limpeza da casa e saia
+                  com suas melhores roupas sem se preocupar com os pelos!
                 </span>
+              </div>
+            </div>
+          </div>
+          <div
+            className={`d-flex flex-column col-sm-6 col-xs-12 order-last order-sm-first`}
+            style={{ gap: "16px" }}
+          >
+            <div className="d-none d-sm-block">
+              <div
+                className={`${styles.logoFamily} ${styles.fw700} ${styles.fs24}`}
+              >
+                <span className={styles.clBrown}>Diga adeus aos pelos</span>
+              </div>
+              <div>
                 <span
-                  className={`${styles.fs14} ${styles.fw400} ${styles.clGreyLight}`}
+                  className={`${styles.clBrown} ${styles.fw500} ${styles.fs14}`}
                 >
-                  (32)
+                  Deixe seu pet confortável. Facilite a limpeza da casa e saia
+                  com suas melhores roupas sem se preocupar com os pelos!
                 </span>
               </div>
             </div>
             <div>
               <span
-                className={`${styles.fs14} ${styles.fw500} ${styles.clGreyLight}`}
+                className={`${styles.clGreyDark} ${styles.fw600} ${styles.fs18}`}
               >
-                +3k&nbsp;
-              </span>
-              <span
-                className={`${styles.fs14} ${styles.fw400} ${styles.clGreyLight}`}
-              >
-                vendidos
+                Elefante Obeso Listrado ByeFur
               </span>
             </div>
-          </div>
-
-          <div>
-            <Link
-              href={"https://www.google.com/"}
-              className={`${styles.bgOrange} ${styles.dFlex} ${styles.alignItemsCenter} ${styles.justifyContentCenter}`}
-              style={{
-                borderRadius: "8px",
-                padding: "12px 16px",
-                height: "48px",
-                textDecoration: "none",
-              }}
-            >
-              <span
-                className={`${styles.clWhite} ${styles.fw600} ${styles.fs14}`}
+            <div className={`d-flex`} style={{ gap: "8px" }}>
+              <div
+                className={`${styles.clOrange} ${styles.bgOrange20} d-flex justify-content-center align-items-center`}
+                style={{
+                  padding: "0px 12px 0px 0px",
+                  fontSize: "10.5px",
+                  fontWeight: "500",
+                  width: "fit-content",
+                  gap: "4px",
+                  borderRadius: "12px",
+                }}
               >
+                <Image
+                  src="/images/trophy-medal.svg"
+                  width={24}
+                  height={24}
+                  alt="Ícone de troféu"
+                />
+                <span>Premiado</span>
+              </div>
+
+              <div
+                className={`${styles.clGreen} ${styles.bgGreen} d-flex justify-content-center align-items-center`}
+                style={{
+                  padding: "0px 12px 0px 8px",
+                  fontSize: "10.5px",
+                  fontWeight: "500",
+                  width: "fit-content",
+                  gap: "4px",
+                  borderRadius: "12px",
+                }}
+              >
+                <Leaf className={`${styles.clGreen}`} size={16}></Leaf>
+                <span>Sustentável</span>
+              </div>
+            </div>
+            <div className={`d-flex justify-content-between`}>
+              <div
+                className={`d-flex align-items-center`}
+                style={{ gap: "8px" }}
+              >
+                <div className={`d-flex`} style={{ gap: "2px" }}>
+                  <Star
+                    size={20}
+                    weight="fill"
+                    className={`${styles.clOrange}`}
+                  ></Star>
+                  <Star
+                    size={20}
+                    weight="fill"
+                    className={`${styles.clOrange}`}
+                  ></Star>
+                  <Star
+                    size={20}
+                    weight="fill"
+                    className={`${styles.clOrange}`}
+                  ></Star>
+                  <Star
+                    size={20}
+                    weight="fill"
+                    className={`${styles.clOrange}`}
+                  ></Star>
+                  <Star
+                    size={20}
+                    weight="fill"
+                    className={`${styles.clOrange}`}
+                  ></Star>
+                </div>
+                <div>
+                  <span
+                    className={`${styles.fs14} ${styles.fw600} ${styles.clGreyDark}`}
+                  >
+                    5.0&nbsp;
+                  </span>
+                  <span
+                    className={`${styles.fs14} ${styles.fw400} ${styles.clGreyLight}`}
+                  >
+                    (32)
+                  </span>
+                </div>
+              </div>
+              <div>
+                <span
+                  className={`${styles.fs14} ${styles.fw500} ${styles.clGreyLight}`}
+                >
+                  +3k&nbsp;
+                </span>
+                <span
+                  className={`${styles.fs14} ${styles.fw400} ${styles.clGreyLight}`}
+                >
+                  vendidos
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <LinkButton link="teste" href="https://www.google.com/">
                 Compre agora
-              </span>
-            </Link>
+              </LinkButton>
+            </div>
           </div>
-        </div>
-        <div style={{ display: "flex" }}>
-          <Image
-            src="/images/elephant-dog.jpg" // Route of the image file
-            width={230}
-            height={345}
-            alt="Your Name"
-            style={{ borderRadius: "16px" }}
-          />
-          <div
-            style={{
-              padding: "12px 0px",
-              position: "relative",
-              left: "-70px",
-              alignItems: "center",
-            }}
-            className={`${styles.dFlex} ${styles.flexColumn} ${styles.justifyContentSpaceBetween}`}
-          >
-            <Image
-              src="/images/trophy-badge.svg" // Route of the image file
-              width={66}
-              height={66}
-              alt="Your Name"
-              style={{ marginTop: "-7px" }}
-            />
+          <div className={`col-sm-6 col-xs-12 d-flex mb-sm-3`}>
             <div
+              src="/images/elephant-dog.jpg"
+              alt="Cachorro mordendo um elefantinho"
               style={{
-                backgroundColor: "rgba(34, 34, 34, 0.6)",
-                borderRadius: "24px",
-                padding: "6px 12px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "white",
-                width: "fit-content",
-                fontSize: "10.5px",
-                fontWeight: "500",
+                borderRadius: "16px",
+                width: "100%",
+                height: "345px",
+                backgroundImage: 'url("/images/elephant-dog.jpg")',
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
               }}
             >
-              <span>1/7</span>
+              <div
+                style={{
+                  padding: "12px 0px",
+                  height: "100%",
+                }}
+                className={`d-flex justify-content-end`}
+              >
+                <div
+                  style={{ height: "100%" }}
+                  className={`d-flex flex-column justify-content-between align-items-center`}
+                >
+                  <Image
+                    src="/images/trophy-badge.svg"
+                    width={66}
+                    height={66}
+                    alt="Troféu de mais vendido"
+                    style={{ marginTop: "-7px" }}
+                  />
+                  <div
+                    style={{
+                      backgroundColor: "rgba(34, 34, 34, 0.6)",
+                      borderRadius: "24px",
+                      padding: "6px 12px",
+                      color: "white",
+                      width: "fit-content",
+                      fontSize: "10.5px",
+                      fontWeight: "500",
+                    }}
+                    className={`d-flex justify-content-center align-items-center`}
+                  >
+                    <span>1/7</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </main>
 
-      <main style={{ gap: "32px" }}>
+      <main
+        className="d-flex justify-content-center align-items-center mb-5"
+        style={{ gap: "32px" }}
+      >
         <div>
           <div
-            className={`${styles.logoFamily} ${styles.fw700} ${styles.fs32} ${styles.dFlex} ${styles.justifyContentCenter}`}
+            className={`${styles.logoFamily} ${styles.fw700} ${styles.fs32} d-flex justify-content-center`}
           >
             <div style={{ marginRight: "4px" }}>
               <span className={styles.clOrange}>Ame </span>
@@ -312,7 +305,7 @@ export default function Document() {
           </div>
           <div
             style={{ marginBottom: "8px" }}
-            className={`${styles.logoFamily} ${styles.fw700} ${styles.fs32} ${styles.dFlex} ${styles.justifyContentCenter}`}
+            className={`${styles.logoFamily} ${styles.fw700} ${styles.fs32} d-flex justify-content-center`}
           >
             <div style={{ marginRight: "4px" }}>
               <span className={styles.clOrange}>Cuide </span>
@@ -334,21 +327,19 @@ export default function Document() {
           marginBottom: "32px",
           position: "relative",
           width: "100%",
-          height: "600px",
         }}
       >
-        <Image
-          src="/images/pets-3.svg" // Route of the image file
-          fill
-          sizes="(max-width: 768px) 100vw"
+        <img
+          src="/images/pets-3.svg"
           alt="Your Name"
           style={{
             objectFit: "contain",
+            width: "100%",
           }}
         />
       </div>
 
-      <footer className={`${styles.dFlex} ${styles.flexColumn}`}>
+      <footer className={`d-flex ${styles.flexColumn}`}>
         <div>
           <span className={`${styles.fw400} ${styles.fs14} ${styles.clGrey}`}>
             <Copyright></Copyright> Abstrakt Brands
@@ -368,11 +359,6 @@ export default function Document() {
 
       <style jsx>{`
         main {
-          padding: 56px 0;
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           max-width: 888px;
         }
         footer {

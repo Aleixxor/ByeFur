@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.w100 {
+  width: 100%;
+}
+
 .dFlex {
   display: flex;
 }
@@ -81,6 +85,10 @@
   background-color: #f48c12;
 }
 
+.bgOrange:disabled {
+  background-color: #f48b12a2;
+}
+
 .bgOrange20 {
   background-color: #f48c1233;
 }
@@ -111,4 +119,16 @@
 
 .bgWhite {
   background-color: #ffffff;
+}
+
+.gap4 {
+  gap: 4px;
+}
+
+.gap16 {
+  gap: 16px;
+}
+
+.p16 {
+  padding: 16px;
 }
