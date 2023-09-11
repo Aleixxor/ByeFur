@@ -73,52 +73,64 @@
   font-size: 14px;
 }
 
+.fs10 {
+  font-size: 10.5px;
+}
+
 .clBrown {
-  color: #4d2600;
+  color: var(--brown);
 }
 
 .clOrange {
-  color: #f48c12;
+  color: var(--orange) !important;
 }
 
 .bgOrange {
-  background-color: #f48c12;
+  background-color: var(--orange);
 }
 
 .bgOrange:disabled {
-  background-color: #f48b12a2;
+  background-color: var(--orange-60);
 }
 
 .bgOrange20 {
-  background-color: #f48c1233;
+  background-color: var(--orange-20);
+}
+
+.borderOrange {
+  border-color: var(--orange) !important;
+}
+
+.borderGrayLighter {
+  border-color: var(--grey-lighter) !important;
 }
 
 .clGreen {
-  color: #00a650;
+  color: var(--green);
 }
 
 .bgGreen {
-  background-color: #00a65033;
+  background-color: var(--green-20);
 }
 
 .clGreyLight {
-  color: #818181 !important;
+  color: var(--grey-light) !important;
 }
 
 .clGrey {
-  color: #666666 !important;
+  color: var(--grey) !important;
 }
 
 .clGreyDark {
-  color: #222222 !important;
+  color: var(--grey-dark) !important;
 }
 
 .clWhite {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .bgWhite {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .gap4 {

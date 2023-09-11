@@ -6,6 +6,7 @@ import Head from "next/head";
 import LinkButton from "../components/link-button";
 import Button from "../components/button";
 import Logo from "../components/logo";
+import Header from "../components/header";
 
 export default function Document() {
   return (
@@ -13,22 +14,8 @@ export default function Document() {
       <Head>
         <title>ByeFur</title>
       </Head>
-      <header className={`${styles.w100} ${styles.p16} mb-3`}>
-        <div className={`d-flex justify-content-between`}>
-          <div className={`d-flex ${styles.gap16}`}>
-            <Image
-              src="/images/logo.svg"
-              height={24}
-              width={24}
-              alt="Logomarca"
-            />
-            <Logo size={16} className={`${styles.fw600}`}></Logo>
-          </div>
-          <div>
-            <List size={24} className={styles.clOrange}></List>
-          </div>
-        </div>
-      </header>
+
+      <Header></Header>
 
       <main className="d-flex justify-content-center align-items-center mb-5">
         <div className={`row d-flex align-items-center justify-content-center`}>
@@ -112,7 +99,7 @@ export default function Document() {
           </div>
           <div
             className={`d-flex flex-column col-sm-6 col-xs-12 order-last order-sm-first`}
-            style={{ gap: "16px" }}
+            style={{ gap: "8px" }}
           >
             <div className="d-none d-sm-block">
               <div
@@ -232,7 +219,7 @@ export default function Document() {
             </div>
 
             <div>
-              <LinkButton link="teste" href="https://www.google.com/">
+              <LinkButton link="teste" href="products/product">
                 Compre agora
               </LinkButton>
             </div>
@@ -348,7 +335,7 @@ export default function Document() {
         <div>
           <a
             className={`${styles.fw500} ${styles.fs14} ${styles.clGrey}`}
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://www.google.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
