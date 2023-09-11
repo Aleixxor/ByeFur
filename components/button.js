@@ -10,7 +10,6 @@ export default function Button({
 }) {
   return (
     <button
-      disabled
       onClick={onClick}
       href={href}
       className={`${className} ${outlined ? styles.bgWhite : styles.bgOrange} ${

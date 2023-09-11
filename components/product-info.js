@@ -3,8 +3,32 @@ import Image from "next/image";
 import { Leaf, Minus, PawPrint, Plus, Star } from "@phosphor-icons/react";
 import LinkButton from "./link-button";
 import Button from "./button";
+import { useState } from "react";
 
 export default function ProductInfo({ style, className }) {
+  const [quantidade, setQuantidade] = useState(1);
+  const [unidadesDisponiveis, setUnidadesDisponiveis] = useState(3);
+
+  const handleSetQuantidade = (qtd) => {
+    let quantidadeAux = quantidade + qtd;
+    if (quantidadeAux < 1) quantidadeAux = 0;
+    if (quantidadeAux > unidadesDisponiveis)
+      quantidadeAux = unidadesDisponiveis;
+
+    setQuantidade(quantidadeAux);
+  };
+
+  const handleSetUnidadesDisponiveis = (qtd) => {
+    let quantidadeAux = unidadesDisponiveis + qtd;
+    if (quantidadeAux < 0) {
+      quantidadeAux = 0;
+      handleSetQuantidade(-qtd);
+    }
+    if (quantidadeAux > unidadesDisponiveis)
+      quantidadeAux = unidadesDisponiveis;
+
+    setUnidadesDisponiveis(quantidadeAux);
+  };
   return (
     <>
       <div className={`col-sm-6 col-xs-12 d-flex mb-3`}>
@@ -170,10 +194,11 @@ export default function ProductInfo({ style, className }) {
             </div>
           </div>
           <div className="d-flex col-6">
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
               <Button
                 className={`${styles.borderGrayLighter} rounded-0 rounded-start input-group-text`}
                 outlined
+                onClick={() => handleSetQuantidade(-1)}
               >
                 <Minus></Minus>
               </Button>
@@ -181,11 +206,13 @@ export default function ProductInfo({ style, className }) {
                 type="text"
                 className={`form-control text-center ${styles.borderGrayLighter}`}
                 aria-label="Amount (to the nearest dollar)"
-                value={0}
+                value={quantidade}
+                onChange={(event) => handleSetQuantidade(event.target.value)}
               />
               <Button
                 className={`${styles.borderGrayLighter} rounded-0 rounded-end input-group-text`}
                 outlined
+                onClick={() => handleSetQuantidade(1)}
               >
                 <Plus></Plus>
               </Button>
@@ -195,14 +222,19 @@ export default function ProductInfo({ style, className }) {
 
         <div>
           <LinkButton
-            href="https://www.google.com/"
+            href="#"
             className={`${styles.clOrange} ${styles.bgOrange20}`}
           >
             Oferta acaba em <strong>00:21:56</strong>
           </LinkButton>
         </div>
         <div>
-          <LinkButton href="https://www.google.com/">Compre agora</LinkButton>
+          <Button
+            onClick={() => handleSetUnidadesDisponiveis(-quantidade)}
+            className={`w-100`}
+          >
+            Compre agora
+          </Button>
         </div>
         <div className="d-flex justify-content-between align-items-center">
           <Image
@@ -262,7 +294,7 @@ export default function ProductInfo({ style, className }) {
 
         <div>
           <span className={`${styles.fs14} ${styles.fw500}`}>
-            3 unidades disponíveis
+            {unidadesDisponiveis} unidades disponíveis
           </span>
         </div>
       </div>

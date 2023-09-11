@@ -34,9 +34,9 @@ export default function Product() {
       <Header></Header>
 
       <main className="container-fluid d-flex justify-content-between align-items-center mb-3">
-        <Button outlined>
+        <LinkButton href={"/"} outlined>
           <CaretLeft size={24}></CaretLeft>
-        </Button>
+        </LinkButton>
         <Button outlined>
           <span>Compartilhar</span>
           <ShareFat size={24}></ShareFat>
@@ -232,6 +232,7 @@ export default function Product() {
               <div className="d-flex gap-2">
                 <Image
                   src="/images/profile.jpg"
+                  alt="foto de perfil"
                   width={24}
                   height={24}
                   className="rounded-circle"
@@ -282,6 +283,7 @@ export default function Product() {
               <div className="d-flex gap-2">
                 <Image
                   src="/images/profile.jpg"
+                  alt="foto de perfil"
                   width={24}
                   height={24}
                   className="rounded-circle"
@@ -332,6 +334,7 @@ export default function Product() {
               <div className="d-flex gap-2">
                 <Image
                   src="/images/profile.jpg"
+                  alt="foto de perfil"
                   width={24}
                   height={24}
                   className="rounded-circle"
@@ -382,6 +385,7 @@ export default function Product() {
               <div className="d-flex gap-2">
                 <Image
                   src="/images/profile.jpg"
+                  alt="foto de perfil"
                   width={24}
                   height={24}
                   className="rounded-circle"
