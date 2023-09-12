@@ -345,9 +345,6 @@ export default function Document() {
       </footer>
 
       <style jsx>{`
-        main {
-          max-width: 888px;
-        }
         footer {
           width: 100%;
           height: 100px;

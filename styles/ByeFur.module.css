@@ -106,7 +106,7 @@
 }
 
 .clGreen {
-  color: var(--green);
+  color: var(--green) !important;
 }
 
 .bgGreen {

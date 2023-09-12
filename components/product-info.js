@@ -3,7 +3,9 @@ import Image from "next/image";
 import { Leaf, Minus, PawPrint, Plus, Star } from "@phosphor-icons/react";
 import LinkButton from "./link-button";
 import Button from "./button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Timer } from "./timer";
+import Badge from "./badge";
 
 export default function ProductInfo({ style, className }) {
   const [quantidade, setQuantidade] = useState(1);
@@ -90,40 +92,21 @@ export default function ProductInfo({ style, className }) {
           </span>
         </div>
         <div className={`d-flex`} style={{ gap: "8px" }}>
-          <div
-            className={`${styles.clOrange} ${styles.bgOrange20} d-flex justify-content-center align-items-center`}
-            style={{
-              padding: "0px 12px 0px 0px",
-              fontSize: "10.5px",
-              fontWeight: "500",
-              width: "fit-content",
-              gap: "4px",
-              borderRadius: "12px",
-            }}
-          >
+          <Badge style={{ padding: "0px 12px 0px 0px" }}>
             <Image
               src="/images/trophy-medal.svg"
               width={24}
               height={24}
               alt="Ícone de troféu"
             />
-            <span>Premiado</span>
-          </div>
-
-          <div
-            className={`${styles.clGreen} ${styles.bgGreen} d-flex justify-content-center align-items-center`}
-            style={{
-              padding: "0px 12px 0px 8px",
-              fontSize: "10.5px",
-              fontWeight: "500",
-              width: "fit-content",
-              gap: "4px",
-              borderRadius: "12px",
-            }}
-          >
+            <span className={`${styles.fw500} ${styles.fs10}`}>Premiado</span>
+          </Badge>
+          <Badge className={`${styles.clGreen} ${styles.bgGreen}`}>
             <Leaf className={`${styles.clGreen}`} size={16}></Leaf>
-            <span>Sustentável</span>
-          </div>
+            <span className={`${styles.fw500} ${styles.fs10}`}>
+              Sustentável
+            </span>
+          </Badge>
         </div>
         <div className={`d-flex justify-content-between`}>
           <div className={`d-flex align-items-center`} style={{ gap: "8px" }}>
@@ -225,7 +208,12 @@ export default function ProductInfo({ style, className }) {
             href="#"
             className={`${styles.clOrange} ${styles.bgOrange20}`}
           >
-            Oferta acaba em <strong>00:21:56</strong>
+            Oferta acaba em{" "}
+            {/* <strong>
+              {tempoRestante.horas}:{tempoRestante.minutos}:
+              {tempoRestante.segundos}
+            </strong> */}
+            <Timer className="fw-bold"></Timer>
           </LinkButton>
         </div>
         <div>
